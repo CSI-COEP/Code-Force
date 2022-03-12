@@ -60,10 +60,10 @@ disease_to_symptoms_particular = {
     "Gall Stone Obstruction" : ["Is the pain Colicky? (It comes and it goes) (Yes/No)"], #Age, #Weight, #Gender {Fat , Female, Fertile}
     "Gasteric Ulcer" : ["Does the pain start after you have a meal and subsides after the stomach is empty??(Yes/No)"], #Stressed, #Spiecy, #Alcohol
     "Pancreatitis" : ["Does the pain rediate to back??(Yes/No)"], #Alcoholism, #Trauma
-    "Kidney Stone" : ["Did you ever notice blood in your urine? (Yes/No)","Did you notice any fine granule like particles passing through urine??"], #More Symptomes to Add, #History of Similar Pain
-    "Peretonitis" : ["Do you feel like you are having palpations?"],
-    "Gastroenteritis" : ["Are you having generalised pain in stomach all the time??", "Have you consumed some uncooked food or do you fell like you have drank contaminated water recently?"],#Contaminated Food/ Uncooked Food or Water
-    "Colitis" : ["Are you having Dysentry??"],#To add Jaudice and Dysentry #Similar Complaints
+    "Kidney Stone" : ["Did you ever notice blood in your urine? (Yes/No)","Did you notice any fine granule like particles passing through urine? (Yes/No)"], #More Symptomes to Add, #History of Similar Pain
+    "Peretonitis" : ["Do you feel like you are having palpations?(Yes/No)"],
+    "Gastroenteritis" : ["Are you having generalised pain in stomach all the time?(Yes/No)", "Have you consumed some uncooked food or do you fell like you have drank contaminated water recently?(Yes/No)"],#Contaminated Food/ Uncooked Food or Water
+    "Colitis" : ["Are you having Dysentry?(Yes/No)"],#To add Jaudice and Dysentry #Similar Complaints
     "Appendicitis" : ["Does the pain radiate from front to back??(Yes/No)"] #Similar Complaint
 }
 
@@ -78,8 +78,8 @@ general_history = {
     "email":"Please enter your registered email id",
     "Name" : "What is your name?", 
     "Age" : "What is your age?",     
-    "height" : "What is your height?(Provide a approx figure in cms)(Only Numbers)", 
-    "Weight" : "What is your weight?(In Kg)(Only numbers)", 
+    "height" : "What is your height?(Provide a approx figure in cms)(only numbers)", 
+    "Weight" : "What is your weight?(In Kg)(only numbers)", 
     "gender" : "Gender ?",  
     "Diet" : "Are you Vegetarian or Non-Vegeterain?" , 
     "Alcohol" : "Do you consume alcohol? (Yes/No)",
