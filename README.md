@@ -85,6 +85,13 @@ npm i
 expo start
 ```
 
+## Screenshots
+![Homescreen](https://user-images.githubusercontent.com/87142754/158045750-0af7680b-2cf9-43ee-b528-85079a9dfb9e.jpeg)
+![Loginscreen](https://user-images.githubusercontent.com/87142754/158045756-40c94ce5-b23a-4973-93e6-113bf74eb207.jpeg)
+![bot1](https://user-images.githubusercontent.com/87142754/158045759-2a6c6734-33e8-429f-8c47-358391cbb205.jpeg)
+![bot2](https://user-images.githubusercontent.com/87142754/158045769-8b4e78b7-90a3-4fea-a0af-65f1bfd999c8.jpeg)
+
+
 ## Tech Stack
 * Backend
   * Python <br/>
