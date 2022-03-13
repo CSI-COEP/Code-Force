@@ -38,6 +38,8 @@ univ_user_history = dict()
 univ_que_ans_dict = dict()
 
 tag=0
+doctors = json.loads(open('doctors_info.json').read())
+disease_to_doctor = json.loads(open('disease_to_doctor.json').read())
 # extract chat_id based on the incoming object
 def get_links(disease):
     trusted_sources = ["mayoclinic","webmd","clevelandclinic","medlineplus","nhs","clevelandclinic","ncbi","niddk"]
@@ -101,7 +103,21 @@ def send_links(bot_message,bot_chatID):
             message = ""   
     print(response.json())
 
-
+def send_contacts(user_specific,id):
+    bot_token = keys.API_KEY
+    message = "Doctors Required for particular diseases suspected : \n"
+    for key in user_specific:
+        message += key[0] + disease_to_doctor[key[0]]
+        send_text = 'https://api.telegram.org/bot' + str(bot_token) + '/sendMessage?chat_id=' + str(id) + '&parse_mode=Markdown&text=' + message
+        response = requests.get(send_text)
+        message=""
+    for key in doctors.keys():
+        message = "The contact numbers of " + key + " are listed below : \n"
+        for nums in doctors[key].keys():
+            message += nums + doctors[key][nums]
+            send_text = 'https://api.telegram.org/bot' + str(bot_token) + '/sendMessage?chat_id=' + str(id) + '&parse_mode=Markdown&text=' + message
+            response = requests.get(send_text)
+            message=""
 def sample_responses(input_text,update,context):
     updater = Updater(keys.API_KEY, use_context=True)
     dp = updater.dispatcher
@@ -197,6 +213,7 @@ def sample_responses(input_text,update,context):
                 if count == 3:
                     break
             send_links(link,id)
+            send_contacts(univ_specific[id],id)
             data={
                 u'Chat Id':str(get_chat_id(update,context)),
                 u'Current Diseases':str(univ_specific[get_chat_id(update,context)]),
@@ -206,6 +223,7 @@ def sample_responses(input_text,update,context):
             doc_ref_curr.document(str(id)).set(data)
             univ_user_history[id]['chatId']=str(id)
             doc_ref_his.document(str(id)).set(univ_user_history[id])
+            
             del univ_intents[get_chat_id(update,context)]
             del univ_specific[get_chat_id(update,context)]
             del univ_user_history[get_chat_id(update,context)]
